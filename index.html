@@ -69,7 +69,7 @@
                         <a class="page-scroll" href="#result">Results</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#paper">Paper</a>
+                        <a class="page-scroll" href="#paper">Report</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#TeamMembers">Team Members</a>
@@ -97,7 +97,7 @@
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Motivation</h2>
                     <hr class="primary">
-                    <p>Every year, the Baseball Writers’ Association of America (BBWAA) vote on who is to be elected into the Baseball Hall of Fame. A player must receive 75% of the vote to be elected. Since the vote can be subjective, this is a debated topic each year. We believe that machine learning can be used to reveal trends in order to predict whether a player will be inducted.</p>
+                    <p>Every year, the Baseball Writers’ Association of America (BBWAA) vote on who is to be elected into the Baseball Hall of Fame. A player must receive 75% of the vote to be elected. There are many different criteria that the writers take into consideration when voting for a player. However, different writers value certain statistics differently. Since the vote is highly subjective, this is a debated topic each year. We believe that machine learning can be used to reveal trends in order to predict whether a player will be inducted.</p>
                 </div>
             </div>
         </div>
@@ -110,7 +110,7 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Solution</h2>
                     <hr class="light">
-                    <p class="text-faded">Insert Here</p>
+                    <p class="text-faded">We tested each set on multiple learners: decision trees, Bayes nets, naive Bayes, logistic regression, multi-layer perceptron, and nearest neighbor. For the pitchers, we looked at the following attributes: strikeouts, wins above replacement (WAR), games, complete games, shutouts, wins, losses, saves, innings pitched, earned run average (ERA), and fielding independent pitching. For the batters, we considered homeruns, WAR, games, runs, hits, runs batted in, walks, stolen bases, batting average, and on-base percentage plus slugging percentage. </p>
                 </div>
             </div>
         </div>
@@ -122,7 +122,12 @@
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Method</h2>
                     <hr class="primary">
-                    <p>We collected data from baseball-reference.com, dividing it into two different sets: pitchers and batters. For the pitchers, we looked at the following attributes: strikeouts, wins above replacement (WAR), games, complete games, shutouts, wins, losses, saves, innings pitched, earned run average (ERA), and fielding independent pitching. For the batters, we considered homeruns, WAR, games, runs, hits, runs batted in, walks, stolen bases, batting average, and on-base percentage plus slugging percentage. </p>
+                    <p>We collected data from baseball-reference.com, dividing it into two different sets: pitchers and batters. We isolated players that played between 1961-2005 for our training set, and imposed minimum play requirements of 162 games for batters and 100 inning pitched for pitchers. In the end, our data set contained 1725 batters, 128 of which were inducted, and 1327 pitchers, 60 of which were inducted.</p>
+
+                    <p>We chose to preference accuracy in classifying inductees over accuracy in classifying non-inductees, because the former is both more useful and more challenging. Therefore, the most important measure of success we identified for our models was the f-measure of classification of the Hall of Fame players. We tested our models on the 2016 Hall Of Fame ballot and used the classifications given by those predictions compared to the results of voting this year to gauge the accuracy of the model in practice.</p>
+                    <img style="width:80%;" src="img/models.png">
+                    <p><b>f-measures for each model by class</b></p>
+                    <p>Comparing them side by side, you can see that our k-Nearest-Neighbor model has the highest f-measure for HoF pitchers, and Multi-Layer Perceptron model has the highest f-measure for HoF batters. This also shows that, on average, our models were more accurate for pitcher than for batters.</p>
                 </div>
             </div>
         </div>
@@ -135,7 +140,9 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Results</h2>
                     <hr class="light">
-                    <p class="text-faded">Insert Here</p>
+                    <p class="text-faded">We found that the multi-layer perceptron model was best for predicting whether batters would be inducted into the hall of fame, while k-nearest neighbor was the most reliable model for pitchers. WAR was the most significant indicator for a player’s chances of making it into the hall of fame, though WAR alone does not perform as well as our predictor, when our predictor considers WAR alone, its f-measure is 10% lower for batters and 20% lower for pitchers. When tested on the 2016 Hall of Fame ballot, our models performed reasonably well, correctly classifying the two players inducted this year and players projected to be inducted in the coming years.  </p>
+                    <h2 class="section-heading">Predictions for 2016 Ballot</h2>
+
                 </div>
             </div>
         </div>
@@ -146,7 +153,7 @@
             <div class="call-to-action">
                 <h2 class="section-heading">Paper</h2>
                 <hr class="primary">
-                <p>Our extended abastract is available with the button below. It provides more detail and information about our project<p>
+                <p>An extended final report is available below, as a PDF. It provides more detail and information about our project<p>
                 <a href="" class="btn btn-default btn-xl">Available Here</a>
             </div>
         </div>
@@ -163,7 +170,7 @@
                     <h3>Jakub Jezusek</h3>
                 </div>
                 <div class="col-lg-2 text-center col-center">
-                    <h3>Jackson Lowrie</h3>
+                    <h3>Jack Lowrie</h3>
                 </div>
                 <div class="col-lg-2 text-center col-center">
                     <h3>Christopher Pierce</h3>
